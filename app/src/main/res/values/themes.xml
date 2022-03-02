@@ -29,6 +29,11 @@
         <item name="android:textColor"  >@color/pink</item>
 
     </style>
+    <style name="Logout" parent="Widget.MaterialComponents.Button">
+        <item name="android:background">@drawable/up_corner</item>
+        <item name="android:textColor">@color/pink</item>
+
+    </style>
 
     <style name="MyEditText" parent="Widget.AppCompat.EditText">
 <!--        <item name="colorControlNormal">@color/black</item>-->
