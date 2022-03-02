@@ -64,7 +64,8 @@
             android:layout_marginTop="35dp"
             android:layout_marginLeft="25dp"
             android:layout_marginRight="25dp"
-            android:background="@drawable/up_corner"/>
+            android:background="@drawable/up_corner"
+            android:textColor="#232323"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="60dp"
@@ -75,7 +76,8 @@
             android:layout_marginTop="15dp"
             android:layout_marginLeft="25dp"
             android:layout_marginRight="25dp"
-            android:background="@drawable/up_corner"/>
+            android:background="@drawable/up_corner"
+            android:textColor="#232323"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="60dp"
@@ -86,7 +88,8 @@
             android:layout_marginTop="15dp"
             android:layout_marginLeft="25dp"
             android:layout_marginRight="25dp"
-            android:background="@drawable/up_corner"/>
+            android:background="@drawable/up_corner"
+            android:textColor="#232323"/>
         <ImageButton
             android:id="@+id/submit"
             android:layout_width="60dp"
@@ -95,7 +98,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="50dp"
             android:background="@drawable/buttonbg"
-            android:src="@drawable/logout" />
+            android:src="@drawable/btnsubmit" />
     </LinearLayout>
 
 
