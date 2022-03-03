@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.SearchView;
 
 import com.example.project1.Recyclerview.MyRecyclerAdapter;
 
@@ -20,13 +21,14 @@ import java.util.zip.Inflater;
 public class ThirdFragment extends Fragment {
     RecyclerView thirdRecAdapter;
     ArrayList<Recycledata> thirdreclist = new ArrayList<>();
+    SearchView thirdSearchview;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_third,container,false);
         thirdRecAdapter = view.findViewById(R.id.frag_thirdrecyclerview);
-
+        thirdSearchview = view.findViewById(R.id.Thirdsearch);
 
         thirdreclist.add(new Recycledata("https://s-media-cache-ak0.pinimg.com/originals/f2/b5/f2/f2b5f2aeb31e079f7e48ac0c338a8507.jpg","0"));
         thirdreclist.add(new Recycledata("https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Jordan_Lipofsky.jpg/170px-Jordan_Lipofsky.jpg","1"));
@@ -48,6 +50,19 @@ public class ThirdFragment extends Fragment {
         StaggeredGridLayoutManager staggeredGridLayoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
         thirdRecAdapter.setLayoutManager(staggeredGridLayoutManager);
         thirdRecAdapter.setAdapter(thirdfragAdap);
+
+        thirdSearchview.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+                thirdfragAdap.getFilter().filter(s);
+                return false;
+            }
+        });
         return view;
     }
 }

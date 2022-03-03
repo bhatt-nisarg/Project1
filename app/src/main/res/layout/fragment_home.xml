@@ -7,6 +7,7 @@
     tools:context=".HomeFragment">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
+
         android:id="@+id/bottom_navigation"
         style="@style/topnav"
         android:layout_width="match_parent"
