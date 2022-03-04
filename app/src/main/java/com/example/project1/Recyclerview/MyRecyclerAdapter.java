@@ -88,14 +88,6 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Vi
     }
 
 
-//    //method for filtering our recycleview items
-//    public void filterList(ArrayList<com.example.project1.Recycledata> updatedlist) {
-//        //below code is for add filter list in our course list
-//        Log.d("ababab",updatedlist.toString());
-//        Recycledata = updatedlist;
-//        //below code is for notify that dataset is changed
-//        notifyDataSetChanged();
-//    }
 
     public Filter getFilter(){
         return new Filter() {
@@ -125,22 +117,6 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Vi
                 Recycledata = (ArrayList<com.example.project1.Recycledata>) filterResults.values;
                 notifyDataSetChanged();
             }
-              /*  ArrayList<com.example.project1.Recycledata> updatedList = new ArrayList<>();
-                if (charSequence == null || charSequence.length() == 0){
-                    updatedList.addAll(fullList);
-                }else{
-                    String filterpattern = charSequence.toString().toLowerCase().trim();
-                    for (Recycledata item : Recycledata){
-                        if (item.getText().toLowerCase().contains(filterpattern)){
-                            updatedList.add(item);
-                        }
-                    }
-                }
-                FilterResults results = new FilterResults();
-                results.values = updatedList;
-                return results;*/
-
-
 
         };
     }
