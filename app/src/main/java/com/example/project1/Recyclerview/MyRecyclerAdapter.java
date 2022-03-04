@@ -122,7 +122,7 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Vi
 
             @Override
             protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
-                Recycledata.addAll((ArrayList<Recycledata>)filterResults.values);
+                Recycledata = (ArrayList<com.example.project1.Recycledata>) filterResults.values;
                 notifyDataSetChanged();
             }
               /*  ArrayList<com.example.project1.Recycledata> updatedList = new ArrayList<>();
