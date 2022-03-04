@@ -4,7 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ThirdFragment"
-    android:layout_marginTop="?actionBarSize"
     >
     <SearchView
 
@@ -19,7 +18,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:layout_below="@id/Thirdsearch"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="570dp"
         android:id="@+id/frag_thirdrecyclerview"/>
 
 </RelativeLayout>
