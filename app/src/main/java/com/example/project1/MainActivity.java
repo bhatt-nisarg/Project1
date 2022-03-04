@@ -149,7 +149,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     Log.d("asdf",cursor.getString(0)+" " + cursor.getString(1)+" "+cursor.getString(2) + " "+cursor.getString(3));
                     if (email.equals(cursor.getString(0)) && passwordselect.equals(cursor.getString(1))){
 
-//
+
                         Toast.makeText(getApplicationContext(),"Login Successful", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(MainActivity.this,Homepage.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
