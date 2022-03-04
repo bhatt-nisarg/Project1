@@ -24,7 +24,7 @@ public class Homepage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage);
-        bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation);
+        bottomNavigationView = findViewById(R.id.bottom_navigation);
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         prefs.edit().putBoolean("Islogin", true).commit();
         loadFragment(new HomeFragment());
@@ -37,11 +37,13 @@ public class Homepage extends AppCompatActivity {
                     case R.id.home:
                         fragment = new HomeFragment();
                         loadFragment(fragment);
+
                         return true;
 
                     case R.id.setting:
                         fragment = new SettingFragment();
                         loadFragment(fragment);
+
                         return true;
                 }
                 return false;

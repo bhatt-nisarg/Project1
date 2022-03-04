@@ -52,6 +52,19 @@ public class SQLiteDatabaseHandler extends SQLiteOpenHelper {
         db.insert(TABLE_NAME,null,Values);
         db.close();
     }
+    public boolean update(String email,String password,String phone){
+        Log.d("abcd",""+" " +  email+" "+" " + phone + " "+password);
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues Values = new ContentValues();
+        Values.put(EMAIL,email);
+        Values.put(PASSWORD,password);
+        Values.put(OTP,"123456");
+        Values.put(PHONE,phone);
+        db.update(TABLE_NAME,Values,null,null);
+
+        db.close();
+            return true;
+    }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {

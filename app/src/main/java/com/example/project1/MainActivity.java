@@ -1,13 +1,9 @@
 package com.example.project1;
 
-
-import androidx.annotation.DrawableRes;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.text.InputType;
@@ -17,7 +13,6 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 
@@ -42,13 +37,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //       long a= db.addUser_info();
         db.insertdata();
 //       Log.d("sdsdsada", String.valueOf(a));
-        pass = (TextView) findViewById(R.id.password_select);
-        otp = (TextView) findViewById(R.id.otp_select);
-        timer = (TextView)findViewById(R.id.timeertext);
-        send = (TextView)findViewById(R.id.send);
-        editemail = (EditText) findViewById(R.id.editemail);
-        editpass = (EditText)findViewById(R.id.password);
-        submitdata = (ImageButton) findViewById(R.id.submit);
+        pass = findViewById(R.id.password_select);
+        otp = findViewById(R.id.otp_select);
+        timer = findViewById(R.id.timeertext);
+        send = findViewById(R.id.send);
+        editemail = findViewById(R.id.editemail);
+        editpass = findViewById(R.id.password);
+        submitdata = findViewById(R.id.submit);
         submitdata.setOnClickListener(this);
         pass.setOnClickListener(this);
         otp.setOnClickListener(this);
@@ -70,8 +65,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 otp.setTextColor(getResources().getColor(R.color.pink));
                 pass.setTextColor(getResources().getColor(R.color.white));
                 pass.setElevation(8);
-                send.setVisibility(view.INVISIBLE);
-                timer.setVisibility(view.INVISIBLE);
+                send.setVisibility(View.INVISIBLE);
+                timer.setVisibility(View.INVISIBLE);
                 otp.setElevation(0);
                 if (setotp){
                     editpass.setHint("Enter OTP");
@@ -90,8 +85,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 pass.setTextColor(getResources().getColor(R.color.pink));
                 otp.setElevation(8);
                 pass.setElevation(0);
-                send.setVisibility(view.VISIBLE);
-                timer.setVisibility(view.VISIBLE);
+                send.setVisibility(View.VISIBLE);
+                timer.setVisibility(View.VISIBLE);
                 if (setotp){
                     editpass.setHint("Enter OTP");
                     editpass.setInputType(InputType.TYPE_CLASS_NUMBER);
@@ -127,7 +122,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case  R.id.submit:
                 Cursor cursor = db.fetch();
                 cursor.moveToFirst();
-                if (!(editemail.getText().toString().trim().matches(emailPattern)) || editpass.length()==0 || editpass.length() < 8&& !(setotp)){
+                if (!(editemail.getText().toString().trim().matches(emailPattern)) || editpass.length()==0 || editpass.length() < 6&& !(setotp)){
                     Toast.makeText(getApplicationContext(),"Enter Valid Detail",Toast.LENGTH_SHORT).show();
                 }
                 if (editpass.length() != 6 && setotp){
@@ -140,7 +135,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     if (email.equals(cursor.getString(0))  && otpselect.equals(cursor.getString(2))){
                         Toast.makeText(getApplicationContext(),"Login Succesful", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(MainActivity.this,Homepage.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         startActivity(intent);
+                        finish();
                     }
                     else {
                         Toast.makeText(getApplicationContext(),"Login Failed",Toast.LENGTH_SHORT).show();
@@ -149,29 +146,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 else {
                     String passwordselect = editpass.getText().toString();
+                    Log.d("asdf",cursor.getString(0)+" " + cursor.getString(1)+" "+cursor.getString(2) + " "+cursor.getString(3));
                     if (email.equals(cursor.getString(0)) && passwordselect.equals(cursor.getString(1))){
-                        Toast.makeText(getApplicationContext(),"Login Succesful", Toast.LENGTH_SHORT).show();
+
+//
+                        Toast.makeText(getApplicationContext(),"Login Successful", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(MainActivity.this,Homepage.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         startActivity(intent);
+                        finish();
                     }
                     else {
                         Toast.makeText(getApplicationContext(),"Login Failed",Toast.LENGTH_SHORT).show();
                     }
                 }
-//               /* Log.d("sdsdsd",email+"=="+password);
-//                Boolean isLogin = db.checkusernamepassword(email,password);*/
-//                Cursor cursor = db.fetch();
-//                cursor.moveToFirst();
-//                Log.d("sdssd",cursor.getString(0)+"==="+cursor.getString(1));
-//
-//                if ((email.equals(cursor.getString(0)) && passwords.equals(cursor.getString(1)) ||  password.equals(cursor.getString(1))){
-//                    Toast.makeText(getApplicationContext(),"Login Succesful", Toast.LENGTH_SHORT).show();
-//                    Intent intent = new Intent(MainActivity.this,Homepage.class);
-//                    startActivity(intent);
-//                }
-//                else {
-//                    Toast.makeText(getApplicationContext(),"Login Failed",Toast.LENGTH_SHORT).show();
-//                }
+
 
         }
 

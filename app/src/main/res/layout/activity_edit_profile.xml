@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditProfile"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:orientation="vertical"
+        android:layout_margin="20dp"
+        android:padding="30dp"
+        android:background="@drawable/edittext">
+
+        <EditText
+            android:id="@+id/email"
+            style="@style/MyEditText"
+            android:inputType="textEmailAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Email"
+            />
+        <EditText
+            android:id="@+id/password"
+            style="@style/MyEditText"
+            android:inputType="textPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter password"
+            />
+        <EditText
+            android:layout_marginTop="10dp"
+            style="@style/MyEditText"
+            android:inputType="phone"
+            android:id="@+id/phoneno"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Phone No"
+            />
+
+
+        <Button
+            android:layout_marginTop="50dp"
+            android:id="@+id/update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="update"
+            android:textSize="16sp"
+            android:textAllCaps="true"
+            android:layout_gravity="center"
+            style="@style/Theme.AppCompat"/>
+
+
+    </LinearLayout>
+</RelativeLayout>

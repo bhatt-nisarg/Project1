@@ -22,14 +22,13 @@ public class HomeFragment extends Fragment {
         // Required empty public constructor
         super(R.layout.fragment_home);
 
-
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
        View view = inflater.inflate(R.layout.fragment_home,container,false);
-       topnavigation = (BottomNavigationView) view.findViewById(R.id.bottom_navigation);
+       topnavigation = view.findViewById(R.id.bottom_navigation);
         loadFragment(new FirstFragment());
         topnavigation.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
@@ -40,15 +39,18 @@ public class HomeFragment extends Fragment {
                     case R.id.first:
                         fragment = new FirstFragment();
                         loadFragment(fragment);
+
                         return true;
 
                     case R.id.second:
                         fragment = new SecondFragment();
                         loadFragment(fragment);
+
                         return true;
                     case R.id.third:
                         fragment = new ThirdFragment();
                         loadFragment(fragment);
+
                         return true;
                 }
                 return false;
