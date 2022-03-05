@@ -15,7 +15,6 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-
 public class SettingFragment extends Fragment implements View.OnClickListener {
     SQLiteDatabaseHandler db;
     ImageView profile_display;

@@ -122,17 +122,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case  R.id.submit:
                 Cursor cursor = db.fetch();
                 cursor.moveToFirst();
-                if (!(editemail.getText().toString().trim().matches(emailPattern)) || editpass.length()==0 || editpass.length() < 6&& !(setotp)){
-                    Toast.makeText(getApplicationContext(),"Enter Valid Detail",Toast.LENGTH_SHORT).show();
-                }
-                if (editpass.length() != 6 && setotp){
-                    Toast.makeText(getApplicationContext(),"Enter valid OTP",Toast.LENGTH_SHORT).show();
-
-                }
                 String email =editemail.getText().toString();
                 if (setotp) {
                     String otpselect = editpass.getText().toString();
-                    if (email.equals(cursor.getString(0))  && otpselect.equals(cursor.getString(2))){
+                    if (editpass.length() != 6){
+                        Toast.makeText(getApplicationContext(),"Enter valid OTP",Toast.LENGTH_SHORT).show();
+
+                    }
+                    else if(email.equals(cursor.getString(0))  && otpselect.equals(cursor.getString(2))){
                         Toast.makeText(getApplicationContext(),"Login Succesful", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(MainActivity.this,Homepage.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -147,7 +144,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 else {
                     String passwordselect = editpass.getText().toString();
                     Log.d("asdf",cursor.getString(0)+" " + cursor.getString(1)+" "+cursor.getString(2) + " "+cursor.getString(3));
-                    if (email.equals(cursor.getString(0)) && passwordselect.equals(cursor.getString(1))){
+                    if (!(editemail.getText().toString().trim().matches(emailPattern)) || editpass.length()==0 || editpass.length() < 6){
+                        Toast.makeText(getApplicationContext(),"Enter Valid Detail",Toast.LENGTH_SHORT).show();
+
+                    }
+                    else if(email.equals(cursor.getString(0)) && passwordselect.equals(cursor.getString(1))){
 
 
                         Toast.makeText(getApplicationContext(),"Login Successful", Toast.LENGTH_SHORT).show();
@@ -165,7 +166,4 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
     }
-
-
-
 }
