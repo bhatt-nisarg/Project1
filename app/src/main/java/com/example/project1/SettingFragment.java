@@ -26,7 +26,7 @@ public class SettingFragment extends Fragment implements View.OnClickListener {
     SQLiteDatabaseHandler db;
     ImageView profile_display;
     TextView editprofile,disp_email,disp_phone;
-    ImageButton logout_btn;
+    TextView logout_btn;
 
 
     public SettingFragment() {

@@ -7,22 +7,53 @@
     tools:context=".EditProfile"
     >
     <LinearLayout
+        android:id="@+id/linear1"
         android:layout_width="match_parent"
-        android:layout_height="500dp"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:paddingVertical="15dp">
+        <ImageButton
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="10dp"
+            />
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edit Profile"
+            android:textSize="20sp"
+            android:layout_marginLeft="15dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linear2"
+        android:layout_below="@id/linear1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_margin="20dp"
         android:padding="30dp"
-        android:background="@drawable/edittext">
+        >
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:id="@+id/addimage"
             android:layout_gravity="center"/>
+        <TextView
+            android:layout_marginTop="15dp"
+            android:layout_width="wrap_content"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:id="@+id/select"
+            android:text="Upload Photo"
+            android:layout_gravity="center"
+            android:textSize="20sp"
 
+            />
 
         <EditText
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="30dp"
             android:id="@+id/email"
             style="@style/MyEditText"
             android:inputType="textEmailAddress"
@@ -49,30 +80,15 @@
             android:hint="Enter Phone No"
             />
 
-        <TextView
-            android:layout_marginTop="15dp"
-            android:layout_width="120dp"
-            android:gravity="center"
-            android:layout_height="wrap_content"
-            android:id="@+id/select"
-            android:text="Change photo"
-            android:layout_gravity="center"
-            android:background="@drawable/resend_bg"
-            android:textSize="15sp"
-            android:textColor="@color/white"
-            />
-        <Button
-            android:layout_marginTop="50dp"
-            android:id="@+id/update"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="update"
-            android:textSize="16sp"
-            android:textAllCaps="true"
-            android:layout_gravity="center"
-            style="@style/Theme.AppCompat"/>
-
-
     </LinearLayout>
+    <Button
+        android:layout_alignParentBottom="true"
+        android:id="@+id/update"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save Changes"
+        android:textSize="16sp"
+        android:textAllCaps="true"
+        style="@style/Theme.AppCompat"/>
 
 </RelativeLayout>
