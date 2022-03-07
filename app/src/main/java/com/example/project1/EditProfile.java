@@ -88,7 +88,7 @@ public class EditProfile extends AppCompatActivity implements View.OnClickListen
                         Toast.makeText(getApplicationContext(),"Data Update!",Toast.LENGTH_SHORT).show();
                         Fragment fragment = new SettingFragment();
                         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-                        transaction.replace(R.id.frame_container,fragment);
+                        transaction.replace(R.id.settinglayout,fragment);
                         transaction.addToBackStack(null);
                         transaction.commit();
 
