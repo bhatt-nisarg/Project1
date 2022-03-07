@@ -16,13 +16,12 @@
 
         >
 
-        <ImageView
-
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/dis_profile"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginTop="30dp"
-            android:contentDescription="" />
+             />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
