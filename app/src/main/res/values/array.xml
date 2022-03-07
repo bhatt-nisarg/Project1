@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="UploadImages">
+        <item> Pick from gallery</item>
+    </string>
+    <string name="itemIds">
+        <item>gallery_image</item>
+    </string>
+</resources>

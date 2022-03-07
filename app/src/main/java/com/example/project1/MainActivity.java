@@ -143,10 +143,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 else {
                     String passwordselect = editpass.getText().toString();
-                    Log.d("asdf",cursor.getString(0)+" " + cursor.getString(1)+" "+cursor.getString(2) + " "+cursor.getString(3));
+                    //Log.d("asdf",cursor.getString(0)+" " + cursor.getString(1)+" "+cursor.getString(2) + " "+cursor.getString(3));
                     if (!(editemail.getText().toString().trim().matches(emailPattern)) || editpass.length()==0 || editpass.length() < 6){
                         Toast.makeText(getApplicationContext(),"Enter Valid Detail",Toast.LENGTH_SHORT).show();
-
                     }
                     else if(email.equals(cursor.getString(0)) && passwordselect.equals(cursor.getString(1))){
 

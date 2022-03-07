@@ -3,17 +3,24 @@ package com.example.project1;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.fragment.app.Fragment;
 
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
+
+import java.net.URL;
 
 public class SettingFragment extends Fragment implements View.OnClickListener {
     SQLiteDatabaseHandler db;
@@ -29,6 +36,8 @@ public class SettingFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
 
     }
 
@@ -46,8 +55,17 @@ public class SettingFragment extends Fragment implements View.OnClickListener {
         disp_phone = view.findViewById(R.id.dis_phone);
         logout_btn = view.findViewById(R.id.logout);
 
+
+
+
         disp_phone.setText(cursor.getString(0));
         disp_email.setText(cursor.getString(3));
+        profile_display.setImageURI(Uri.parse(cursor.getString(4)));
+
+        Log.d("amgd",cursor.getString(4));
+    //        Picasso.with(getContext())
+    //                .load(cursor.getString(4))
+    //                .into(profile_display);
 
         //setonclickevents
         editprofile.setOnClickListener(this);
