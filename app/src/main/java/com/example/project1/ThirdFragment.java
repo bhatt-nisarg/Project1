@@ -1,21 +1,16 @@
 package com.example.project1;
 
 import android.os.Bundle;
-
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.SearchView;
-
 import com.example.project1.Recyclerview.MyRecyclerAdapter;
-
 import java.util.ArrayList;
-import java.util.zip.Inflater;
+
 
 
 public class ThirdFragment extends Fragment {

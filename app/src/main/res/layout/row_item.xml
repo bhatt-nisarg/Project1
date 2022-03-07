@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -9,43 +8,38 @@
         android:layout_height="150dp"
         app:cardCornerRadius="10dp"
         >
-        <LinearLayout
+
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            >
+            android:layout_height="match_parent">
 
             <ImageButton
-                android:layout_gravity="end"
+                android:elevation="8dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerInParent="true"
+                android:layout_alignParentEnd="true"
                 android:id="@+id/close"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:src="@drawable/close"/>
-            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_gravity="center">
-            <androidx.cardview.widget.CardView
-                android:layout_width="100dp"
-                android:layout_height="80dp"
-                android:layout_gravity="center"
-                app:cardCornerRadius="8dp">
+                android:background="@drawable/close"
+                />
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/imageView"
-                android:scaleType="fitXY"/>
-            </androidx.cardview.widget.CardView>
+                android:scaleType="fitXY"
+                android:layout_centerInParent="true"/>
+
             <TextView
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:id="@+id/text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="10dp"
-                android:textSize="20sp" />
-            </LinearLayout>
-        </LinearLayout>
+                android:layout_centerInParent="true"
+                android:layout_alignParentBottom="true"
+                android:textSize="20sp"
+                />
+
+        </RelativeLayout>
     </androidx.cardview.widget.CardView>
 </RelativeLayout>

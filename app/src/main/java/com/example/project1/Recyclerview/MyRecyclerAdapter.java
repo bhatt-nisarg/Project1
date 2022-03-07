@@ -54,6 +54,7 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Vi
         Log.d("abc",Recycledata.get(position).getImage());
 
         //for second fragment
+        //it is use for load image online
 //        Picasso.with(context)
 //                .load(Recycledata.get(position).getImage())
 //                .into(holder.imagesdata);
