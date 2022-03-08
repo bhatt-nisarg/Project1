@@ -16,12 +16,14 @@
     android:background="@color/pink"
     android:paddingTop="5dp"
     >
-    <ImageButton
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginLeft="10dp"
-        android:layout_weight="0.1"
-        />
+<!--    <ImageButton-->
+<!--        android:id="@+id/profile_back"-->
+<!--        android:layout_width="30dp"-->
+<!--        android:layout_height="30dp"-->
+<!--        android:layout_marginTop="5dp"-->
+<!--        android:layout_marginLeft="10dp"-->
+<!--        android:background="@drawable/white_arrow"-->
+<!--        />-->
     <TextView
         android:layout_marginTop="5dp"
         android:layout_width="wrap_content"
@@ -38,6 +40,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Logout"
+        android:gravity="center"
         android:textColor="@color/white"
         android:layout_weight="0.1"
         android:textSize="20sp"

@@ -1,6 +1,7 @@
 package com.example.project1;
 
-public class Recycledata {
+public class
+Recycledata {
     String image;
     String text;
 

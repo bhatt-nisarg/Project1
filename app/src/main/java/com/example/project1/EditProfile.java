@@ -2,6 +2,7 @@ package com.example.project1;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -36,7 +37,7 @@ public class EditProfile extends AppCompatActivity implements View.OnClickListen
     EditText change_phoneno,change_email,change_password;
     Button update_detail;
     String path,dburl;
-
+    boolean isPermission;
     private static final int MY_PERMISSIONS_READ_EXTERNAL_STORAGE = 100;
     public static boolean isExternalStorageDocument(Uri uri){
     return "com.android.externalstorage.documents".equals(uri.getAuthority());}
@@ -61,13 +62,16 @@ public class EditProfile extends AppCompatActivity implements View.OnClickListen
         update_detail = findViewById(R.id.update);
         select_image = findViewById(R.id.select);
         addimg = findViewById(R.id.addimage);
+//        backto_profile = findViewById(R.id.edit_back);
         select_image.setOnClickListener(this);
         update_detail.setOnClickListener(this);
+//        backto_profile.setOnClickListener(this);
         checkPermissions();
 
 
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     public void onClick(View view) {
 
@@ -101,9 +105,15 @@ public class EditProfile extends AppCompatActivity implements View.OnClickListen
                 }
                 break;
             case R.id.select:
-                imageselecter();
-
+                if (!isPermission){
+                    Toast.makeText(getApplicationContext(),"Permission Required !",Toast.LENGTH_SHORT).show();
+                    checkPermissions();
+                }
+                else {
+                    imageselecter();
+                }
                 break;
+
 
         }
 
@@ -156,11 +166,8 @@ public class EditProfile extends AppCompatActivity implements View.OnClickListen
         switch (requestCode) {
             case MY_PERMISSIONS_READ_EXTERNAL_STORAGE: {
                 // If request is cancelled, the result arrays are empty.
-                if (grantResults.length > 0
-                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                } else {
-                    checkPermissions();
-                }
+                isPermission = grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED;
                 return;
             }
         }

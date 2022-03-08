@@ -13,6 +13,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.UiDemo">
+        <activity
+            android:name=".view_image"
+            android:exported="false" />
         <activity android:name=".EditProfile" />
         <activity
             android:name=".SplashScreen"
@@ -28,17 +31,7 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="false">
-
-        </activity>
+            android:exported="false"></activity>
     </application>
 
 </manifest>
-
-
-    <!-- <intent-filter> -->
-    <!-- &lt;!&ndash;                <action android:name="android.intent.action.MAIN" />&ndash;&gt; -->
-
-
-    <!-- &lt;!&ndash;                <category android:name="android.intent.category.LAUNCHER" />&ndash;&gt; -->
-    <!-- </intent-filter> -->

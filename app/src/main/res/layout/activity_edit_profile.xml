@@ -11,14 +11,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="left"
-        android:paddingVertical="15dp">
-        <ImageButton
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginLeft="10dp"
-            />
+        android:paddingVertical="15dp"
+        >
+<!--        <ImageButton-->
+<!--            android:id="@+id/edit_back"-->
+<!--            android:layout_width="30dp"-->
+<!--            android:layout_height="30dp"-->
+<!--            android:layout_marginLeft="10dp"-->
+<!--            android:background="@drawable/black_arrow"-->
+<!--            />-->
         <TextView
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="1dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Edit Profile"
@@ -81,14 +84,16 @@
             />
 
     </LinearLayout>
+
     <Button
-        android:layout_alignParentBottom="true"
         android:id="@+id/update"
+        style="@style/Theme.AppCompat"
+        android:background="@color/pink"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Save Changes"
-        android:textSize="16sp"
+        android:layout_alignParentBottom="true"
+        android:text="@string/save_changes"
         android:textAllCaps="true"
-        style="@style/Theme.AppCompat"/>
+        android:textSize="16sp" />
 
 </RelativeLayout>

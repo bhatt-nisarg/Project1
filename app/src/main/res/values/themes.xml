@@ -68,7 +68,10 @@
     <item name="android:textSize">25dp</item>
    </style>
 
-
+<!--    <style name="changebtn" parent="Widget.AppCompat.Button">-->
+<!--        <item name="android:textColor">@color/white</item>-->
+<!--        <item name="background">@color/pink</item>-->
+<!--    </style>-->
 
 
 </resources>

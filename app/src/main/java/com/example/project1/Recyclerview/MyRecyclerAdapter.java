@@ -1,6 +1,8 @@
 package com.example.project1.Recyclerview;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +15,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.project1.R;
 import com.example.project1.Recycledata;
+import com.example.project1.view_image;
 import com.squareup.picasso.Picasso;
 
 
@@ -42,7 +45,7 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Vi
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") final int position) {
         //typecast object to int type
        // holder.imagesdata.setImageResource(Recycledata.get(position).getImage());
         //for first fragment
@@ -53,6 +56,15 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Vi
 
         Log.d("abc",Recycledata.get(position).getImage());
 
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(context, view_image.class);
+                i.putExtra("image",Recycledata.get(position).getImage());
+                i.putExtra("text",Recycledata.get(position).getText());
+                context.startActivity(i);
+            }
+        });
         //for second fragment
         //it is use for load image online
 //        Picasso.with(context)
@@ -78,8 +90,8 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Vi
         public TextView textdata;
         public ViewHolder(View view) {
             super(view);
-            imagesdata = (ImageView)view.findViewById(R.id.imageView);
-            textdata = (TextView) view.findViewById(R.id.text);
+            imagesdata = view.findViewById(R.id.imageView);
+            textdata = view.findViewById(R.id.text);
         }
     }
     public void removeItem(int position){

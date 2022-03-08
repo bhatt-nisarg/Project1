@@ -15,5 +15,6 @@
     <string name="your_phone">Your Phone</string>
     <string name="your_email">Your Email</string>
     <string name="hello">Hello</string>
+    <string name="save_changes">Save Changes</string>
 
 </resources>

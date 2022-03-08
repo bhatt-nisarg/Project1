@@ -8,6 +8,7 @@ import android.os.Bundle;
 
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.preference.PreferenceManager;
 import android.util.Log;
@@ -54,7 +55,7 @@ public class SettingFragment extends Fragment implements View.OnClickListener {
         disp_email = view.findViewById(R.id.dis_email);
         disp_phone = view.findViewById(R.id.dis_phone);
         logout_btn = view.findViewById(R.id.logout);
-
+//        back_arrow = view.findViewById(R.id.profile_back);
 
 
 
@@ -71,6 +72,7 @@ public class SettingFragment extends Fragment implements View.OnClickListener {
         editprofile.setOnClickListener(this);
         profile_display.setOnClickListener(this);
         logout_btn.setOnClickListener(this);
+//        back_arrow.setOnClickListener(this);
 
     return view;
     }
@@ -97,6 +99,10 @@ public class SettingFragment extends Fragment implements View.OnClickListener {
                 startActivity(intent3);
                 getActivity().finish();
                 break;
+
+//            case R.id.profile_back:
+//
+//                break;
 
         }
     }
