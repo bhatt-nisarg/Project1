@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="editback" parent="Widget.AppCompat.ImageButton">
+        <item name="android:background">@drawable/back_arrow</item>
+        <item name="color">@color/pink</item>
+        <item name="android:iconTint">@color/pink</item>
+    </style>
+</resources>
