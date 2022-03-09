@@ -11,8 +11,6 @@ import android.widget.SearchView;
 import com.example.project1.Recyclerview.MyRecyclerAdapter;
 import java.util.ArrayList;
 
-
-
 public class ThirdFragment extends Fragment {
     RecyclerView thirdRecAdapter;
     ArrayList<Recycledata> thirdreclist = new ArrayList<>();
