@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.viewpager.widget.ViewPager;
 
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -17,6 +18,7 @@ import com.google.android.material.navigation.NavigationBarView;
 
 
 public class HomeFragment extends Fragment {
+
     BottomNavigationView topnavigation;
     public HomeFragment() {
         // Required empty public constructor
@@ -30,6 +32,10 @@ public class HomeFragment extends Fragment {
        View view = inflater.inflate(R.layout.fragment_home,container,false);
        topnavigation = view.findViewById(R.id.bottom_navigation);
         loadFragment(new FirstFragment());
+
+
+
+
         topnavigation.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -66,4 +72,6 @@ public class HomeFragment extends Fragment {
         transaction.addToBackStack(null);
         transaction.commit();
     }
+
+
 }

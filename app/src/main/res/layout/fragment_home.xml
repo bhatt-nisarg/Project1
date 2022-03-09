@@ -15,6 +15,7 @@
         android:background="@color/pink"
         app:menu="@menu/top_app_bar"
         />
+
     <FrameLayout
         android:id="@+id/homeframe_container"
         android:layout_width="match_parent"
