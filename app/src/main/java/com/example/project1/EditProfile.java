@@ -37,7 +37,7 @@ public class EditProfile extends AppCompatActivity implements View.OnClickListen
     EditText change_phoneno,change_email,change_password;
     Button update_detail;
     String path,dburl;
-    boolean isPermission;
+
     private static final int MY_PERMISSIONS_READ_EXTERNAL_STORAGE = 100;
     public static boolean isExternalStorageDocument(Uri uri){
     return "com.android.externalstorage.documents".equals(uri.getAuthority());}
@@ -105,7 +105,8 @@ public class EditProfile extends AppCompatActivity implements View.OnClickListen
                 }
                 break;
             case R.id.select:
-                if (!isPermission){
+                if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
+                        != PackageManager.PERMISSION_GRANTED){
                     Toast.makeText(getApplicationContext(),"Permission Required !",Toast.LENGTH_SHORT).show();
                     checkPermissions();
                 }
@@ -166,8 +167,11 @@ public class EditProfile extends AppCompatActivity implements View.OnClickListen
         switch (requestCode) {
             case MY_PERMISSIONS_READ_EXTERNAL_STORAGE: {
                 // If request is cancelled, the result arrays are empty.
-                isPermission = grantResults.length > 0
-                        && grantResults[0] == PackageManager.PERMISSION_GRANTED;
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                } else {
+                    checkPermissions();
+                }
                 return;
             }
         }
