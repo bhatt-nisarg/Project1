@@ -94,7 +94,6 @@ public class view_image extends AppCompatActivity implements View.OnClickListene
         Uri uri = getContentResolver().insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
                 values);
 
-
         OutputStream outstream;
         try {
             outstream = getContentResolver().openOutputStream(uri);
