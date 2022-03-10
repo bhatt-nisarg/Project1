@@ -43,6 +43,9 @@ public class Homepage extends AppCompatActivity {
                         loadFragment(fragment);
 
                         return true;
+                    case R.id.slider:
+                        fragment = new ImageSlider();
+                        loadFragment(fragment);
                 }
                 return false;
             }
